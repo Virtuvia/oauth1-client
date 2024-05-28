@@ -615,7 +615,7 @@ abstract class Server
     protected function normalizeProtocolParameters(array $parameters)
     {
         array_walk($parameters, function (&$value, $key) {
-            $value = rawurlencode($key) . '="' . rawurlencode($value) . '"';
+            $value = rawurlencode($key) . '="' . rawurlencode((string) $value) . '"';
         });
 
         return 'OAuth ' . implode(', ', $parameters);

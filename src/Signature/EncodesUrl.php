@@ -72,7 +72,7 @@ trait EncodesUrl
             if (is_array($value)) {
                 $normalizedArray[$key] = $this->normalizeArray($value);
             } else {
-                $normalizedArray[$key] = rawurlencode(rawurldecode($value));
+                $normalizedArray[$key] = rawurlencode(rawurldecode((string) $value));
             }
         }
 
